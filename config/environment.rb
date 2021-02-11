@@ -8,6 +8,9 @@ require 'date'
 require 'bundler/setup'
 Bundler.require
 
-# Establish a database connection here
+ActiveRecord::Base.establish_connection(
+    adapter:  "sqlite3",
+    database: "db/migrate/01_create_dogs.rb"
+  )
 
 require_relative "../dog.rb"
